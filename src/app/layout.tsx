@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   title: 'Aravalli Designs - Leading Women\'s Clothing Manufacturer',
   description: 'Premier women\'s clothing manufacturer and exporter from Jaipur, India. Specializing in women\'s apparel, dresses, tunics, and coordinated sets for global markets.',
   keywords: 'women clothing manufacturer, women\'s apparel, Jaipur, India, dresses, tunics, fashion exporter',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
@@ -20,6 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet" />
