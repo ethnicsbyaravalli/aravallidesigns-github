@@ -20,7 +20,7 @@ export default function Contact() {
           </h1>
           <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Whether you're a brand, designer, or B2B client, we're here to help you bring 
-            premium ethnic wear to your customers.
+            premium women's clothing to your customers.
           </p>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-light text-black mb-2">Email</h3>
-                      <p className="text-gray-600 font-light">ethnicsbyaravalli@gmail.com</p>
+                      <p className="text-gray-600 font-light">aravallidesigns@gmail.com</p>
                     </div>
                   </div>
                   

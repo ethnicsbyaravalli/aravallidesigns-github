@@ -64,14 +64,14 @@ export default function Home() {
             {/* Left Column - Content */}
             <div className="text-left">
               <div className="mb-16">
-                <p className="text-sm font-light tracking-widest text-gray-500 mb-8 animate-fade-in-down">PREMIUM ETHNICWEAR MANUFACTURER</p>
+                <p className="text-sm font-light tracking-widest text-gray-500 mb-8 animate-fade-in-down">PREMIUM WOMEN'S CLOTHING MANUFACTURER</p>
                 <h1 className="text-5xl md:text-7xl font-light text-black leading-none mb-8 animate-fade-in-up animation-delay-200">
                   THE LUXURY OF
-                  <span className="block italic text-red-500 animate-fade-in-up animation-delay-400">ETHNIC CRAFTSMANSHIP</span>
+                  <span className="block italic text-red-500 animate-fade-in-up animation-delay-400">ARTISANAL CRAFTSMANSHIP</span>
                 </h1>
                 <p className="text-lg font-light text-gray-600 max-w-xl leading-relaxed animate-fade-in-up animation-delay-600">
-                  Premium ethnicwear manufacturer in Jaipur for brands, designers, and B2B clients. 
-                  Custom, bulk, and private label ethnic clothing direct from manufacturer.
+                  Premium women's clothing manufacturer in Jaipur for brands, designers, and B2B clients. 
+                  Custom, bulk, and private label women's clothing direct from manufacturer.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-8 animate-fade-in-up animation-delay-800">
@@ -110,13 +110,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="animate-fade-in-left">
-              <p className="text-sm font-light tracking-widest text-gray-500 mb-6">ABOUT ETHNICS BY ARAVALLI</p>
+              <p className="text-sm font-light tracking-widest text-gray-500 mb-6">ABOUT ARAVALLI DESIGNS</p>
               <h2 className="text-4xl md:text-5xl font-light text-black leading-tight mb-8">
                 The balance of <span className="italic text-red-500">traditional artistry</span> and modern production
               </h2>
               <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
                 Based in Jaipur's textile hub, we combine traditional craftsmanship with modern manufacturing techniques 
-                to deliver premium ethnic wear for brands, designers, and B2B clients globally.
+                to deliver premium women's clothing for brands, designers, and B2B clients globally.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 group">
@@ -133,10 +133,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 h-96 flex items-center justify-center animate-fade-in-right hover:scale-105 transition-transform duration-500">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-red-500 mx-auto mb-4 hover:scale-110 transition-transform duration-300"></div>
-                <p className="text-sm font-light text-gray-500">MANUFACTURING FACILITY</p>
+            <div className="animate-fade-in-right hover:scale-105 transition-transform duration-500">
+              <div className="relative rounded-lg overflow-hidden">
+                <img 
+                  src="https://lh3.googleusercontent.com/p/AF1QipMN1X472LIyKs9ShMxiTxWWwyFKPRlpygxcfe7Q=s680-w680-h510-rw"
+                  alt="Aravalli Designs Manufacturing Facility"
+                  className="w-full h-96 object-cover hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+                  <p className="text-sm font-light tracking-wider">MANUFACTURING FACILITY</p>
+                </div>
               </div>
             </div>
           </div>
@@ -149,10 +155,10 @@ export default function Home() {
           <div className="text-center mb-20">
             <p className="text-sm font-light tracking-widest text-gray-500 mb-6">OUR PRODUCT PORTFOLIO</p>
             <h2 className="text-4xl md:text-5xl font-light text-black leading-tight mb-8">
-              <span className="italic text-red-500">Classic</span> and contemporary women's ethnic wear
+              <span className="italic text-red-500">Classic</span> and contemporary women's clothing
             </h2>
             <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Welcome to Ethnics by Aravalli – your destination for premium ethnic wear crafted in Jaipur, India 
+              Welcome to Aravalli Designs – your destination for premium women's clothing crafted in Jaipur, India 
               for brands, designers, and B2B clients.
             </p>
           </div>
@@ -335,8 +341,8 @@ export default function Home() {
               It's time to achieve <span className="italic text-red-500">more</span> with <span className="italic text-red-500">less</span>
             </h2>
             <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Whether you're a brand, designer, or B2B client, Ethnics by Aravalli is your trusted partner 
-              for premium ethnic wear manufacturing from Jaipur, India.
+              Whether you're a brand, designer, or B2B client, Aravalli Designs is your trusted partner 
+              for premium women's clothing manufacturing from Jaipur, India.
             </p>
           </div>
 
@@ -346,7 +352,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-1 h-1 bg-red-500 rounded-full mt-3"></div>
-                  <p className="text-gray-600 font-light">Specialized in women's ethnic wear manufacturing and export from Jaipur</p>
+                  <p className="text-gray-600 font-light">Specialized in women's clothing manufacturing and export from Jaipur</p>
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="w-1 h-1 bg-red-500 rounded-full mt-3"></div>
@@ -376,7 +382,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center">
                   <div className="w-1 h-1 bg-red-500 rounded-full mr-4"></div>
-                  <span className="text-gray-600 font-light">ethnicsbyaravalli@gmail.com</span>
+                  <span className="text-gray-600 font-light">aravallidesigns@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-1 h-1 bg-red-500 rounded-full mr-4"></div>

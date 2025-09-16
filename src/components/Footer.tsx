@@ -10,7 +10,7 @@ export default function Footer() {
               <h3 className="text-lg font-light tracking-wider">ARAVALLI DESIGNS</h3>
             </div>
             <p className="text-gray-400 font-light text-sm leading-relaxed">
-              Premium ethnicwear manufacturer in Jaipur for brands, designers, and B2B clients.
+              Premium women's clothing manufacturer in Jaipur for brands, designers, and B2B clients.
             </p>
           </div>
           <div>
@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400 text-sm font-light">
               <li>H 169, Malviya Nagar Industrial Area</li>
               <li>Malviya Nagar, Jaipur, Rajasthan</li>
-              <li>ethnicsbyaravalli@gmail.com</li>
+              <li>aravallidesigns@gmail.com</li>
             </ul>
           </div>
         </div>
