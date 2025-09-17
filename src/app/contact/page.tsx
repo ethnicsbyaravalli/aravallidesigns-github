@@ -14,7 +14,7 @@ export default function Contact() {
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-sm font-light tracking-widest text-gray-500 mb-8">GET IN TOUCH</p>
-          <h1 className="text-6xl md:text-8xl font-light text-black leading-none mb-8">
+          <h1 className="text-6xl md:text-8xl font-light text-black leading-none mb-8 font-serif-heading">
             Let's create something
             <span className="block italic text-red-500">extraordinary together</span>
           </h1>
@@ -31,7 +31,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-20">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-light text-black mb-8">Send us a message</h2>
+              <h2 className="text-3xl font-light text-black mb-8 font-serif-heading">Send us a message</h2>
               <form className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -100,7 +100,7 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="space-y-12">
               <div>
-                <h2 className="text-3xl font-light text-black mb-8">Contact Information</h2>
+                <h2 className="text-3xl font-light text-black mb-8 font-serif-heading">Contact Information</h2>
                 <div className="space-y-8">
                   <div className="flex items-start space-x-4">
                     <div className="w-6 h-6 bg-red-500 flex items-center justify-center mt-1">
@@ -156,7 +156,7 @@ export default function Contact() {
 
               {/* Why Partner With Us */}
               <div className="bg-gray-50 p-8">
-                <h3 className="text-xl font-light text-black mb-6">Why Partner With Us?</h3>
+                <h3 className="text-xl font-light text-black mb-6 font-serif-heading">Why Partner With Us?</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-1 h-1 bg-red-500 rounded-full mt-3"></div>
@@ -190,7 +190,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm font-light tracking-widest text-gray-500 mb-6">FREQUENTLY ASKED QUESTIONS</p>
-            <h2 className="text-3xl font-light text-black leading-tight">
+            <h2 className="text-3xl font-light text-black leading-tight font-serif-heading">
               Common questions about our <span className="italic text-red-500">manufacturing process</span>
             </h2>
           </div>

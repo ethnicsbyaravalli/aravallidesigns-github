@@ -41,6 +41,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Serif font utility for headings */
+  .font-serif-heading {
     font-family: 'Playfair Display', serif;
   }
 }
@@ -139,5 +145,32 @@
 
   .animation-delay-800 {
     animation-delay: 0.8s;
+  }
+
+  /* Bento Grid Styles */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    grid-auto-rows: 300px;
+  }
+
+  .bento-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .bento-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

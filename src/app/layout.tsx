@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="shortcut icon" href="/favicon.png" />
@@ -32,7 +32,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-serif`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
