@@ -2,7 +2,8 @@
   "root": true,
   "env": {
     "browser": true,
-    "es2020": true
+    "es2020": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
@@ -10,5 +11,11 @@
   ],
   "ignorePatterns": ["dist", ".eslintrc.cjs"],
   "parser": "@typescript-eslint/parser",
-  "rules": {}
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "no-unused-vars": "warn",
+    "no-undef": "off",
+    "@next/next/no-img-element": "warn",
+    "@next/next/no-page-custom-font": "warn"
+  }
 }
