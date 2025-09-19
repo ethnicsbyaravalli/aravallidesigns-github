@@ -16,7 +16,9 @@ export default function Home() {
   const fourthRightImageRef = useRef<HTMLImageElement>(null)
   const fifthLeftImageRef = useRef<HTMLImageElement>(null)
   const fifthRightImageRef = useRef<HTMLImageElement>(null)
+  const heroTextRef = useRef<HTMLDivElement>(null)
   const [, setScrollProgress] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     let rafId: number
@@ -132,12 +134,6 @@ export default function Home() {
         fifthRightImageRef.current.style.opacity = fifthSetOpacity.toString()
       }
       
-      // Update hero text blur effect based on scroll progress
-      const heroTextElement = document.querySelector('.hero-text')
-      if (heroTextElement) {
-        const blurAmount = Math.min(progress * 3, 2) // 0 to 2px blur based on scroll
-        ;(heroTextElement as HTMLElement).style.filter = `blur(${blurAmount}px)`
-      }
       
       // Continue the animation loop
       rafId = requestAnimationFrame(smoothUpdate)
@@ -160,9 +156,22 @@ export default function Home() {
     }
   }, [])
 
+  // Handle hero text blur when menu is open
+  useEffect(() => {
+    if (heroTextRef.current) {
+      if (isMenuOpen) {
+        heroTextRef.current.style.setProperty('filter', 'blur(4px)', 'important')
+        heroTextRef.current.style.setProperty('transition', 'filter 0.3s ease-out', 'important')
+      } else {
+        heroTextRef.current.style.setProperty('filter', 'blur(0px)', 'important')
+        heroTextRef.current.style.setProperty('transition', 'filter 0.3s ease-out', 'important')
+      }
+    }
+  }, [isMenuOpen])
+
   return (
     <div className="bg-white" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-      <Header />
+      <Header onMenuStateChange={setIsMenuOpen} />
       
       {/* Mobile Circular Gallery - Only visible on mobile */}
       <div className="fixed inset-0 z-10 sm:hidden">
@@ -201,7 +210,7 @@ export default function Home() {
       </div>
       
       {/* Hero Content - Fixed and Centered */}
-      <div className="hero-text fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full px-4 sm:px-6 lg:px-8">
+      <div ref={heroTextRef} className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100] w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
             <div className="mb-4 sm:mb-6 lg:mb-8">

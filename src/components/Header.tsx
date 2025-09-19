@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react"
 import StaggeredMenu from "./StaggeredMenu"
 
-export default function Header() {
+interface HeaderProps {
+  onMenuStateChange?: (isOpen: boolean) => void
+}
+
+export default function Header({ onMenuStateChange }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -42,8 +46,8 @@ export default function Header() {
           colors={['#f8f9fa', '#ffffff']}
           logoUrl="/ARAVALLI png.png"
           accentColor="#ef4444"
-          onMenuOpen={() => console.log('Menu opened')}
-          onMenuClose={() => console.log('Menu closed')}
+          onMenuOpen={() => onMenuStateChange?.(true)}
+          onMenuClose={() => onMenuStateChange?.(false)}
         />
       </header>
     </>
