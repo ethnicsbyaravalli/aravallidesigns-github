@@ -46,30 +46,30 @@ export default function Home() {
       const leftMove = -progress * moveDistance // Move left image further left
       const rightMove = progress * moveDistance // Move right image further right
       
-      // Show new images after 20% scroll progress (earlier threshold)
+      // Show new images after 20% scroll progress
       const showNewImages = progress > 0.2
       const newImageProgress = Math.max(0, (progress - 0.2) * 1.25) // 0 to 1 after 20% scroll
       const newImageScale = 1 + newImageProgress * (windowWidth < 640 ? 0.8 : 1.5)
       const newLeftMove = -newImageProgress * moveDistance
       const newRightMove = newImageProgress * moveDistance
       
-      // Show third set of images after 40% scroll progress (earlier threshold)
+      // Show third set of images after 40% scroll progress
       const showThirdImages = progress > 0.4
       const thirdImageProgress = Math.max(0, (progress - 0.4) * 1.67) // 0 to 1 after 40% scroll
       const thirdImageScale = 1 + thirdImageProgress * (windowWidth < 640 ? 0.8 : 1.5)
       const thirdLeftMove = -thirdImageProgress * moveDistance
       const thirdRightMove = thirdImageProgress * moveDistance
       
-      // Show fourth set of images after 80% scroll progress
-      const showFourthImages = progress > 0.80
-      const fourthImageProgress = Math.max(0, (progress - 0.80) * 5) // 0 to 1 after 80% scroll
+      // Show fourth set of images after 60% scroll progress
+      const showFourthImages = progress > 0.6
+      const fourthImageProgress = Math.max(0, (progress - 0.6) * 2.5) // 0 to 1 after 60% scroll
       const fourthImageScale = 1 + fourthImageProgress * (windowWidth < 640 ? 0.8 : 1.5)
       const fourthLeftMove = -fourthImageProgress * moveDistance
       const fourthRightMove = fourthImageProgress * moveDistance
       
-      // Show fifth set of images after 90% scroll progress
-      const showFifthImages = progress > 0.90
-      const fifthImageProgress = Math.max(0, (progress - 0.90) * 10) // 0 to 1 after 90% scroll
+      // Show fifth set of images after 80% scroll progress
+      const showFifthImages = progress > 0.8
+      const fifthImageProgress = Math.max(0, (progress - 0.8) * 5) // 0 to 1 after 80% scroll
       const fifthImageScale = 1 + fifthImageProgress * (windowWidth < 640 ? 0.8 : 1.5)
       const fifthLeftMove = -fifthImageProgress * moveDistance
       const fifthRightMove = fifthImageProgress * moveDistance
@@ -99,8 +99,8 @@ export default function Home() {
         newRightImageRef.current.style.opacity = secondSetOpacity.toString()
       }
       
-      // Third set of images (40-80% scroll, fade in 40-50%, fade out 80-90%)
-      const thirdSetOpacity = progress < 0.4 ? 0 : progress < 0.5 ? (progress - 0.4) / fadeTransition : progress < 0.8 ? 1 : progress < 0.9 ? 1 - (progress - 0.8) / fadeTransition : 0
+      // Third set of images (40-60% scroll, fade in 40-50%, fade out 60-70%)
+      const thirdSetOpacity = progress < 0.4 ? 0 : progress < 0.5 ? (progress - 0.4) / fadeTransition : progress < 0.6 ? 1 : progress < 0.7 ? 1 - (progress - 0.6) / fadeTransition : 0
       if (thirdLeftImageRef.current) {
         thirdLeftImageRef.current.style.transform = `translateX(${thirdLeftMove}px) scale(${thirdImageScale})`
         thirdLeftImageRef.current.style.opacity = thirdSetOpacity.toString()
@@ -110,8 +110,8 @@ export default function Home() {
         thirdRightImageRef.current.style.opacity = thirdSetOpacity.toString()
       }
       
-      // Fourth set of images (80-90% scroll, fade in 80-90%, fade out 90-100%)
-      const fourthSetOpacity = progress < 0.8 ? 0 : progress < 0.9 ? (progress - 0.8) / fadeTransition : progress < 1.0 ? 1 - (progress - 0.9) / fadeTransition : 0
+      // Fourth set of images (60-80% scroll, fade in 60-70%, fade out 80-90%)
+      const fourthSetOpacity = progress < 0.6 ? 0 : progress < 0.7 ? (progress - 0.6) / fadeTransition : progress < 0.8 ? 1 : progress < 0.9 ? 1 - (progress - 0.8) / fadeTransition : 0
       if (fourthLeftImageRef.current) {
         fourthLeftImageRef.current.style.transform = `translateX(${fourthLeftMove}px) scale(${fourthImageScale})`
         fourthLeftImageRef.current.style.opacity = fourthSetOpacity.toString()
@@ -121,8 +121,8 @@ export default function Home() {
         fourthRightImageRef.current.style.opacity = fourthSetOpacity.toString()
       }
       
-      // Fifth set of images (90-100% scroll, fade in 90-100%)
-      const fifthSetOpacity = progress < 0.9 ? 0 : progress < 1.0 ? (progress - 0.9) / fadeTransition : 1
+      // Fifth set of images (80-100% scroll, fade in 80-90%)
+      const fifthSetOpacity = progress < 0.8 ? 0 : progress < 0.9 ? (progress - 0.8) / fadeTransition : 1
       if (fifthLeftImageRef.current) {
         fifthLeftImageRef.current.style.transform = `translateX(${fifthLeftMove}px) scale(${fifthImageScale})`
         fifthLeftImageRef.current.style.opacity = fifthSetOpacity.toString()
