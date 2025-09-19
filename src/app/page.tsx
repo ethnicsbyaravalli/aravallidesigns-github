@@ -74,54 +74,62 @@ export default function Home() {
       const fifthLeftMove = -fifthImageProgress * moveDistance
       const fifthRightMove = fifthImageProgress * moveDistance
       
-      // First set of images (0-33% scroll)
+      // Calculate fade transitions for smooth opacity changes
+      const fadeTransition = 0.1 // 10% transition zone
+      
+      // First set of images (0-20% scroll, fade out 20-30%)
+      const firstSetOpacity = progress < 0.2 ? 1 : progress < 0.3 ? 1 - (progress - 0.2) / fadeTransition : 0
       if (leftImageRef.current) {
         leftImageRef.current.style.transform = `translateX(${leftMove}px) scale(${scale})`
-        leftImageRef.current.style.opacity = !showNewImages ? '1' : '0'
+        leftImageRef.current.style.opacity = firstSetOpacity.toString()
       }
       if (rightImageRef.current) {
         rightImageRef.current.style.transform = `translateX(${rightMove}px) scale(${scale})`
-        rightImageRef.current.style.opacity = !showNewImages ? '1' : '0'
+        rightImageRef.current.style.opacity = firstSetOpacity.toString()
       }
       
-      // Second set of images (33-66% scroll)
+      // Second set of images (20-40% scroll, fade in 20-30%, fade out 40-50%)
+      const secondSetOpacity = progress < 0.2 ? 0 : progress < 0.3 ? (progress - 0.2) / fadeTransition : progress < 0.4 ? 1 : progress < 0.5 ? 1 - (progress - 0.4) / fadeTransition : 0
       if (newLeftImageRef.current) {
         newLeftImageRef.current.style.transform = `translateX(${newLeftMove}px) scale(${newImageScale})`
-        newLeftImageRef.current.style.opacity = showNewImages && !showThirdImages ? '1' : '0'
+        newLeftImageRef.current.style.opacity = secondSetOpacity.toString()
       }
       if (newRightImageRef.current) {
         newRightImageRef.current.style.transform = `translateX(${newRightMove}px) scale(${newImageScale})`
-        newRightImageRef.current.style.opacity = showNewImages && !showThirdImages ? '1' : '0'
+        newRightImageRef.current.style.opacity = secondSetOpacity.toString()
       }
       
-      // Third set of images (66-100% scroll)
+      // Third set of images (40-80% scroll, fade in 40-50%, fade out 80-90%)
+      const thirdSetOpacity = progress < 0.4 ? 0 : progress < 0.5 ? (progress - 0.4) / fadeTransition : progress < 0.8 ? 1 : progress < 0.9 ? 1 - (progress - 0.8) / fadeTransition : 0
       if (thirdLeftImageRef.current) {
         thirdLeftImageRef.current.style.transform = `translateX(${thirdLeftMove}px) scale(${thirdImageScale})`
-        thirdLeftImageRef.current.style.opacity = showThirdImages ? '1' : '0'
+        thirdLeftImageRef.current.style.opacity = thirdSetOpacity.toString()
       }
       if (thirdRightImageRef.current) {
         thirdRightImageRef.current.style.transform = `translateX(${thirdRightMove}px) scale(${thirdImageScale})`
-        thirdRightImageRef.current.style.opacity = showThirdImages ? '1' : '0'
+        thirdRightImageRef.current.style.opacity = thirdSetOpacity.toString()
       }
       
-      // Fourth set of images (80%+ scroll)
+      // Fourth set of images (80-90% scroll, fade in 80-90%, fade out 90-100%)
+      const fourthSetOpacity = progress < 0.8 ? 0 : progress < 0.9 ? (progress - 0.8) / fadeTransition : progress < 1.0 ? 1 - (progress - 0.9) / fadeTransition : 0
       if (fourthLeftImageRef.current) {
         fourthLeftImageRef.current.style.transform = `translateX(${fourthLeftMove}px) scale(${fourthImageScale})`
-        fourthLeftImageRef.current.style.opacity = showFourthImages ? '1' : '0'
+        fourthLeftImageRef.current.style.opacity = fourthSetOpacity.toString()
       }
       if (fourthRightImageRef.current) {
         fourthRightImageRef.current.style.transform = `translateX(${fourthRightMove}px) scale(${fourthImageScale})`
-        fourthRightImageRef.current.style.opacity = showFourthImages ? '1' : '0'
+        fourthRightImageRef.current.style.opacity = fourthSetOpacity.toString()
       }
       
-      // Fifth set of images (90%+ scroll)
+      // Fifth set of images (90-100% scroll, fade in 90-100%)
+      const fifthSetOpacity = progress < 0.9 ? 0 : progress < 1.0 ? (progress - 0.9) / fadeTransition : 1
       if (fifthLeftImageRef.current) {
         fifthLeftImageRef.current.style.transform = `translateX(${fifthLeftMove}px) scale(${fifthImageScale})`
-        fifthLeftImageRef.current.style.opacity = showFifthImages ? '1' : '0'
+        fifthLeftImageRef.current.style.opacity = fifthSetOpacity.toString()
       }
       if (fifthRightImageRef.current) {
         fifthRightImageRef.current.style.transform = `translateX(${fifthRightMove}px) scale(${fifthImageScale})`
-        fifthRightImageRef.current.style.opacity = showFifthImages ? '1' : '0'
+        fifthRightImageRef.current.style.opacity = fifthSetOpacity.toString()
       }
       
       // Continue the animation loop
