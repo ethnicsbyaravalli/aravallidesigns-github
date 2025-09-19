@@ -5,6 +5,7 @@ import Footer from "@/components/Footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Catalog() {
   const products = [
@@ -45,50 +46,47 @@ export default function Catalog() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-6">
+      <section className="min-h-screen flex items-center px-6 py-20 pt-32">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-light tracking-tight text-black mb-6 font-serif-heading">
-              Our Collection
+          <div className="text-center mb-20">
+            <p className="text-sm font-light tracking-widest text-gray-500 mb-6">OUR COLLECTION</p>
+            <h1 className="text-4xl md:text-5xl font-light text-black leading-tight mb-8 font-serif-heading">
+              Discover our <span className="italic text-red-500">carefully curated</span> selection
             </h1>
-            <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
-              Discover our carefully curated selection of contemporary Indian fashion, 
-              where tradition meets modern elegance.
+            <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Contemporary Indian fashion where tradition meets modern elegance, 
+              crafted for brands, designers, and B2B clients.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Bento Grid */}
-      <section className="px-6 pb-20">
+      {/* Products Grid */}
+      <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product) => (
-              <Card 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+              <div 
                 key={product.id} 
-                className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer aspect-[9/16]"
+                className="group animate-fade-in-up hover:scale-105 transition-all duration-300"
+                style={{ animationDelay: `${(index + 1) * 100}ms` }}
               >
-                <CardContent className="p-0 h-full relative">
-                  {/* Product Image */}
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    />
-                    
-                    
-                    {/* Quick Info (always visible) */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-white font-medium text-lg mb-1 font-serif-heading drop-shadow-lg">
-                        {product.name}
-                      </h3>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                <div className="bg-gray-50 h-[500px] mb-6 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-300 overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <h3 className="text-lg font-light text-black mb-2 group-hover:text-red-500 transition-colors duration-300 font-serif-heading">
+                  {product.name}
+                </h3>
+                <p className="text-sm font-light text-gray-600">
+                  Premium craftsmanship with contemporary design
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -96,21 +94,27 @@ export default function Catalog() {
 
       {/* Call to Action */}
       <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light tracking-tight text-black mb-6 font-serif-heading">
-            Can't Find What You're Looking For?
-          </h2>
-          <p className="text-xl text-gray-600 font-light mb-8 leading-relaxed">
-            We're constantly adding new pieces to our collection. Get in touch with us 
-            to discuss custom designs or special requests.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-medium">
-              Contact Us
-            </Button>
-            <Button size="lg" variant="outline" className="border-black text-black hover:bg-black hover:text-white font-medium">
-              View All Collections
-            </Button>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm font-light tracking-widest text-gray-500 mb-6">READY TO GET STARTED?</p>
+            <h2 className="text-3xl font-light text-black leading-tight font-serif-heading">
+              Can't find what you're looking for? <span className="italic text-red-500">Let's create it together</span>
+            </h2>
+          </div>
+          
+          <div className="text-center">
+            <p className="text-lg font-light text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+              We're constantly adding new pieces to our collection. Get in touch with us 
+              to discuss custom designs, special requests, or bulk orders.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="text-sm font-light tracking-wider text-black border-b border-black pb-1 hover:opacity-60 transition-all duration-300 hover:scale-105">
+                INQUIRE FOR CUSTOM DESIGNS
+              </Link>
+              <Link href="/products" className="text-sm font-light tracking-wider text-gray-600 hover:text-black transition-all duration-300 hover:scale-105">
+                VIEW ALL PRODUCTS
+              </Link>
+            </div>
           </div>
         </div>
       </section>

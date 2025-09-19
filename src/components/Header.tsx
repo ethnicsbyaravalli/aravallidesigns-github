@@ -28,7 +28,7 @@ export default function Header() {
       {/* Header with Staggered Menu */}
       <header className={`fixed top-0 z-40 w-full transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100' 
+          ? 'bg-white/95 border-b border-gray-100' 
           : 'bg-transparent'
       }`} style={{ overflow: 'visible' }}>
         <StaggeredMenu
