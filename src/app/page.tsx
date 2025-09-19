@@ -16,7 +16,7 @@ export default function Home() {
   const fourthRightImageRef = useRef<HTMLImageElement>(null)
   const fifthLeftImageRef = useRef<HTMLImageElement>(null)
   const fifthRightImageRef = useRef<HTMLImageElement>(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const [, setScrollProgress] = useState(0)
 
   useEffect(() => {
     let rafId: number
@@ -26,7 +26,6 @@ export default function Home() {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset
       const windowHeight = window.innerHeight
-      const windowWidth = window.innerWidth
       const maxScroll = windowHeight * 4 // 4x screen height for scroll space (twice as fast)
       targetProgress = Math.min(scrollTop / maxScroll, 1)
     }
@@ -37,6 +36,7 @@ export default function Home() {
       setScrollProgress(currentProgress)
       
       const progress = currentProgress
+      const windowWidth = window.innerWidth
       
       // Calculate scale for images (1x to 2.5x) - reduced on mobile
       const scale = 1 + progress * (windowWidth < 640 ? 0.8 : 1.5)
